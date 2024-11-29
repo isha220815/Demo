@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking - M4You</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ff4c4c;
+            color: white;
+        }
+
+        .top-bar .title {
+            font-size: 1.8rem;
+        }
+
+        .top-bar .navigation {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-bar .navigation a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .top-bar .navigation a.active {
+            text-decoration: underline;
+        }
+
+        .main-container {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ff4c4c;
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-group select,
+        .form-group input[type="number"],
+        .form-group input[type="text"],
+        .form-group input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #ff4c4c;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #e03d3d;
+        }
+
+        .seat-selection {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .seat {
+            padding: 15px;
+            text-align: center;
+            background: #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .seat.selected {
+            background: #ff4c4c;
+            color: white;
+        }
+
+        .seat:hover {
+            background: #f0a500;
+        }
+
+        .summary {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .summary h2 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .summary p {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <section class="top-bar">
+        <div class="left-content">
+            <h2 class="title">M4You</h2>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a class="active" href="ticket-booking.html">Book Tickets</a></li>
+                
+            </ul>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-container">
+        <h1>Book Your Tickets</h1>
+        <div class="form-container">
+            <form action="#" method="post">
+                <!-- Movie Selection -->
+                <div class="form-group">
+                    <label for="movie">Select Movie</label>
+                    <select id="movie" name="movie">
+                        <option value="jurassic">Jurassic World</option>
+                        <option value="vikram">Vikram</option>
+                        <option value="firestarter">Firestarter</option>
+                    </select>
+                </div>
+
+                <!-- Seat Selection -->
+                <div class="form-group">
+                    <label>Select Seats</label>
+                    <div class="seat-selection">
+                        <div class="seat">A1</div>
+                        <div class="seat">A2</div>
+                        <div class="seat">A3</div>
+                        <div class="seat">A4</div>
+                        <div class="seat">A5</div>
+                        <div class="seat">B1</div>
+                        <div class="seat">B2</div>
+                        <div class="seat">B3</div>
+                        <div class="seat">B4</div>
+                        <div class="seat">B5</div>
+                    </div>
+                </div>
+
+                <!-- Payment -->
+                <div class="form-group">
+                    <label for="payment">Payment Amount</label>
+                    <input type="text" id="payment" name="payment" placeholder="Enter total amount" readonly />
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <input type="submit" value="Book Now">
+                </div>
+            </form>
+
+            <!-- Booking Summary -->
+            <div class="summary">
+                <h2>Booking Summary</h2>
+                <p><strong>Movie:</strong> Jurassic World</p>
+                <p><strong>Seats:</strong> A1, A2</p>
+                <p><strong>Total Price:</strong> $30</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
